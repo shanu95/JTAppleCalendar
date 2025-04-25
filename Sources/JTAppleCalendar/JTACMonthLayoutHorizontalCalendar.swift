@@ -61,12 +61,12 @@ extension JTACMonthLayout {
                         if totalDayCounter % fullSection == 0 {
                             yCellOffset = 0
                             xCellOffset = sectionInset.left
-                            contentWidth += round(attribute.width * 7) + endSeparator
+                            contentWidth += (attribute.width * 7).rounded() + endSeparator
                             xStride = contentWidth
                             endOfSectionOffsets.append(contentWidth)
                         } else {
                             if totalDayCounter >= delegate?.totalDays ?? 0 {
-                                contentWidth += round(attribute.width * 7) + endSeparator
+                                contentWidth += (attribute.width * 7).rounded() + endSeparator
                                 endOfSectionOffsets.append(contentWidth)
                             }
                             if totalDayCounter % maxNumberOfDaysInWeek == 0 {
