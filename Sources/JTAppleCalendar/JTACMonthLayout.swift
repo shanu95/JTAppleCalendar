@@ -24,7 +24,6 @@
 
 import Foundation
 import UIKit
-fileprivate let errorDelta: CGFloat = 0.5
 
 /// Methods in this class are meant to be overridden and will be called by its collection view to gather layout information.
 class JTACMonthLayout: UICollectionViewLayout, JTACMonthLayoutProtocol {
