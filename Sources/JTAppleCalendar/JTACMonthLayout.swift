@@ -106,7 +106,13 @@ class JTACMonthLayout: UICollectionViewLayout, JTACMonthLayoutProtocol {
             }
         }
         
-        return CGSize(width: width, height: height)
+
+      // --- clamp to physical pixel to prevent cumulative drift ---
+      let scale = UIScreen.main.scale
+      height = (height * scale).rounded(.down) / scale
+      width  = (width  * scale).rounded(.down) / scale
+      // -----------------------------------------------------------
+      return CGSize(width: width, height: height)
     }
     
     open override func register(_ nib: UINib?, forDecorationViewOfKind elementKind: String) {
